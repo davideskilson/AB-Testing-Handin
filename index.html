@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>A/B Testing Handin</title>
+    <!-- import CSS styles -->
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Lato:wght@100;200;300;400&display=swap"
+    />
+  </head>
+
+  <!-- page content goes into <body> -->
+  <body>
+    <div id="title">
+      <h1>A/B Testing Handin</h1>
+    </div>
+    <div id="portfolio-readiness">
+      <div>
+        <h2>Portfolio Readiness: Introduction</h2>
+        <p>
+          In this project, my third assignment in CSCI 1300: User Interfaces and
+          User Experiences, I had the chance to conduct my own A/B test on a
+          given site. I had the opportunity to make a minor change to the
+          website, collect user data on both the original and modified versions,
+          and conduct a statistical analysis that allowed me to draw conclusions
+          about the relative effectivenss of the two versions.
+        </p>
+        <p>
+          The overarching question here that I am attempting to answer is how my
+          modification impacted certain measureable site metrics, which in
+          practice would generally translate with an end objective related to
+          the purpose of the site. A/B testing helps me make observations
+          relating to these metrics in a controlled experimental manner that
+          allows for mathmatical evidence that can illustrate the effect of a
+          minor change.
+        </p>
+      </div>
+    </div>
+    <hr />
+    <div id="part1">
+      <div>
+        <h2>Part 1: Data Collection (In Studio)</h2>
+        <p>
+          In this initial phase of the project, I slightly modified a given
+          stencil site and gathered data on both versions of the site from my
+          classmates.
+        </p>
+        <div>
+          <p>
+            The change I chose to make to the site involved the reordering of
+            the appointments to make them chronological. While the original "A"
+            version of the site had the April 26th appointment above the April
+            23rd and 24th appointments, my modified "B" version of the site had
+            that appointment at the bottom of the screen below the April 23rd
+            and 24th appointments; this meant now that all appointments on my
+            "B" site were in order from earlier appointments to later
+            appointments as one scrolls down the site.
+          </p>
+          <p>
+            Here is a screenshot of the relevant portion of the original page:
+          </p>
+          <img
+            src="assets/versiona.png"
+            alt="screenshot of original A version"
+          />
+          <p>
+            Here is a screenshot of the relevant portion of the modified page:
+          </p>
+          <img
+            src="assets/versionb.png"
+            alt="screenshot of modified B version"
+          />
+        </div>
+      </div>
+    </div>
+    <hr />
+    <div id="part2">
+      <div>
+        <h2>Part 2: Analysis</h2>
+        <p>
+          In this segment of the project, I had the chance to conduct a complete
+          statistical analysis of the data I collected on my two versions of the
+          website. This analysis included writing null and alternative
+          hypotheses, making predictions, and running statistical tests.
+        </p>
+        <div id="creatingHypotheses">
+          <h3>Creating Hypotheses</h3>
+          <p>
+            I created null and alternative hypotheses for three metrics, two of
+            them that were given and one that I came up with on my own.
+          </p>
+          <h4>Matric 1: Misclick Rate (Given)</h4>
+          <p>
+            <b>Metric Definition:</b> The frequency with which users click
+            something else on the page before finding the correct button for the
+            task.
+          </p>
+          <p>
+            <b>Null Hypothesis (H0):</b> The frequency with which users click
+            something else on the page before finding the correct button for the
+            task will be the same across Version A and Version B.
+          </p>
+          <p>
+            <b>Alternative Hypothesis (H1):</b> The frequency with which users
+            click something else on the page before finding the correct button
+            for the task will be higher on Version A than on Version B.
+          </p>
+          <p>
+            <b>Reasoning behind alternative hypothesis:</b> My change to the
+            site reordered the appointments to be in the proper order. Thus, the
+            interface and order is more intuitive, so there is a less likely of
+            a chance that users wil be confused and click the wrong appointment
+            date.
+          </p>
+          <p>
+            <b
+              >Prediction about rejecting/failing to reject the null
+              hypothesis:</b
+            >
+            As just stated, my change to the site allowed the dates to be in
+            order on the page, which will help users understand the ordering
+            scheme. Thus, if they use the heuristic regarding the ordering of
+            dates, they will be less likely to make a misclick on my modified
+            site where the ordering followed that heuristic, rather than the
+            original that only partially follows it. Therefore, I predict that I
+            will reject the null hypothesis and accept the alternative
+            hypothesis.
+          </p>
+          <h4>Matric 2: Time on Page (Given)</h4>
+          <p>
+            <b>Metric Definition:</b> Time spent on the webpage for each user
+            group.
+          </p>
+          <p>
+            <b>Null Hypothesis(H0):</b> The time spent on the webpage for users
+            for Version A will be equal to Version B.
+          </p>
+          <p>
+            <b>Alternative Hypothesis (H1):</b> The time spent on the webpage
+            for users for Version A will be greater than the time spent for
+            users of Version B.
+          </p>
+          <p>
+            <b>Reasoning behind alternative hypothesis:</b> My change to the
+            site reordered the appointments to be in the proper order. Thus, the
+            interface and order is more intuitive, so users will more quickly
+            figure out the paradigm and therefore finish the task faster,
+            thereby spending less time on the site.
+          </p>
+          <p>
+            <b
+              >Prediction about rejecting/failing to reject the null
+              hypothesis:</b
+            >
+            As just stated, my change to the site allowed the dates to be in
+            order on the page, which will help users understand the ordering
+            scheme. Thus, if they use the heuristic regarding the ordering of
+            dates, they will have an easier time navigating the page and will
+            thus take less time to complete the task. Therefore, I predict that
+            I will reject the null hypothesis.
+          </p>
+          <h4>Matric 3: Mouse Movement Distance (My Choice)</h4>
+          <p>
+            <b>Metric Definition:</b> The total distance in pixels of the user's
+            mouse's movements on the page.
+          </p>
+          <p>
+            <b>Metric of Choice Description:</b> This metric will look at the
+            total distance that a user's mouse moves while completing the task.
+            More mouse movement may indicate confusion, and a target is to limit
+            confusion, so thus measuring mouse movement can be an indicator of
+            user confusion. That is why I chose it as my third metric to
+            consider.
+          </p>
+          <p>
+            <b>Null Hypothesis (H0):</b> The number of pixels that a user's
+            mouse moved on the page will be the same for Version A and Version
+            B.
+          </p>
+          <p>
+            <b>Alternative Hypothesis (H1):</b> The number of pixels that a
+            user's mouse moved on the page will be the more for Version A than
+            for Version B.
+          </p>
+          <p>
+            <b>Reasoning behind alternative hypothesis:</b> My change to the
+            site reordered the appointments to be in the proper order. Thus, the
+            interface and order is more intuitive, so users will spend less time
+            perusing the site and moving their mouse and instead will be able to
+            move it straight to the button that completes the task.
+          </p>
+          <p>
+            <b
+              >Prediction about rejecting/failing to reject the null
+              hypothesis:</b
+            >
+            As just stated, my change to the site allowed the dates to be in
+            order on the page, which will help users understand the ordering
+            scheme. Thus, if they use the heuristic regarding the ordering of
+            dates, they will have an easier time navigating the page and will
+            thus need fewer mouse movements to locate the correct button.
+            Therefore, I expect that I will reject the null hypothesis and
+            accept the alternative hypothesis.
+          </p>
+        </div>
+        <div id="statisticalTests">
+          <h3>Statistical Tests</h3>
+          <p>
+            I computed my three metrics for each of the website versions and
+            then conducted the appropriate statistical test.
+          </p>
+          <h4>Matric 1: Misclick Rate</h4>
+          <p>
+            <b>Misclick Rate for Version A:</b> 7 users out of 34 misclicked,
+            meaning that 27 users did not misclick. This means that about 21% of
+            users misclicked.
+          </p>
+          <p>
+            <b>Misclick Rate for Version B:</b> 2 users out of 31 misclicked,
+            meaning that 29 users did not misclick. This means that about 7% of
+            users misclicked.
+          </p>
+          <p>
+            <b>Statistical Test:</b> I chose to run a chi-squared test to look
+            at if the number of users misclicking was statistically different
+            across the different versions. I used a chi-square test because I am
+            looking at how a catagorical variable of misclicking or not relates
+            to the catagorical variable of the version used. Thus, it makes
+            sense to use a chi-square test. I got a chi-squared statistic of
+            2.72 and a p-value of 0.099. Since this p-value is greater than
+            0.05, my results are not statistically significant, and I fail to
+            reject the null hypothesis. In the context of this metric, this
+            means that I do not have sufficient evidence to say that my change
+            to Version B decreased the chance the a user would misclick. In
+            other words, we do not have enough statistical evidence to say that
+            Version B is better than Version A in terms of the frequency of user
+            misclicking. Since I fail to reject to null hypothesis, I in tandem
+            fail to accept the alternative hypothesis.
+          </p>
+          <h4>Matric 2: Time on Page</h4>
+          <p>
+            <b>Time on Page for Version A:</b> The mean was 12860.44
+            milliseconds.
+          </p>
+          <p>
+            <b>Time on Page for Version B:</b> The mean was 13334.47
+            milliseconds.
+          </p>
+          <p>
+            <b>Statistical Test:</b> I chose to run a one-sided t-test to look
+            at if the time spent on the page was less in Version B than in
+            Version A. I used a one-sided t-test to reflect my alternative
+            hypothesis, which is looking at if in Version B there will be
+            decreased time than in Version A. Since the output variable is
+            quantitative, a t-test is appropriate, and since I am only looking
+            at the B is less than A side of things, a one-tailed t-test is
+            necessary. I got a T-score of 0.09 and a p-value of 0.54. Since this
+            p-value is greater than 0.05, my results are not statistically
+            significant, and I fail to reject the null hypothesis. In the
+            context of this metric, this means that I do not have sufficient
+            evidence to say that my change to Version B decreased the time a
+            user would spend on the page. In other words, we do not have enough
+            statistical evidence to say that Version B is better than Version A
+            in terms of the time spent on the page. Since I fail to reject to
+            null hypothesis, I in tandem fail to accept the alternative
+            hypothesis.
+          </p>
+          <h4>Matric 3: Mouse Movement Distance</h4>
+          <p>
+            <b>Mouse Movement Distance for Version A:</b> The mean was 4006.56
+            pixels.
+          </p>
+          <p>
+            <b>Mouse Movement Distance for Version B:</b> The mean was 2312.31
+            pixels.
+          </p>
+          <p>
+            <b>Statistical Test:</b> I chose to run a one-sided t-test to look
+            at if the mouse movement distance was less in Version B than in
+            Version A. I used a one-sided t-test to reflect my alternative
+            hypothesis, which is looking at if in Version B there will be
+            decreased movement distance than in Version A. Since the output
+            variable is quantitative, a t-test is appropriate, and since I am
+            only looking at the B is less than A side of things, a one-tailed
+            t-test is necessary. I got a T-score of -3.84 and a p-value of
+            0.00025. Since this p-value is less than 0.05, my results are
+            statistically significant, and I am able to reject the null
+            hypothesis and accept the alternative hypothesis. In the context of
+            this metric, this means that I have sufficient evidence to say that
+            my change to Version B decreased the movement distance of the mouse
+            in pixels. In other words, we have enough statistical evidence to
+            say that Version B is better than Version A in terms of the movement
+            distance of the mouse, where Version B leads to 1694.25 fewer pixels
+            moved by the mouse on average.
+          </p>
+        </div>
+
+        <div id="summarystats">
+          <h3>Summary Statistics</h3>
+          <p>
+            I calculated some summary statistics about my data, which allowed me
+            to come to some qualitative conclusions.
+          </p>
+          <h4>Matric 1: Misclick Rate</h4>
+          <p>
+            For this metric, I found that in Version A, the rate of misclicking
+            was 21% while for Version B it was 7%. This means that overall, on
+            both versions, most users did not misclick at all, meaning that the
+            overall interface was relatively clear. Additionally, on Version B,
+            even though the decrease was not statistically significant,
+            qualitatively speaking there is an improvement in the misclick rate
+            compared to Version A. I did not consider variance since here I was
+            looking at a frequency distribution with a catagorical variable.
+          </p>
+          <h4>Matric 2: Time on Page</h4>
+          <p>
+            For this metric, I found that in Version A, the average time spent
+            was 12860.44 milliseconds while for Version B it was 13334.47
+            milliseconds. Additionally, for Version A the variance was 140609949
+            while for Version B it was 688912340.9. While the means for time are
+            relatively similar, there is a major difference in the variances,
+            with Version B having a much higher variance. This could perhaps be
+            due to the fact that my imporvement made the site easier to use for
+            some people relative to Version A while harder to use for others,
+            increasing the variance while keeping the same overall mean.
+          </p>
+          <h4>Matric 3: Mouse Movement Distance</h4>
+          <p>
+            For this metric, I found that in Version A, the average mouse
+            distance moved was 4006.56 pixels while for Version B it was 2312.31
+            pixels. Additionally, for Version A the variance was 6401849.35
+            while for Version B it was 205261.2582. While I already analyzed the
+            difference in means in the context of statistical significance in
+            the previous section, I can here consider the variance. Since
+            Version B has significantly decreased variance than Version A, it
+            perhaps means that my change in Version B allowed there to be less
+            confusion among different users and now all users can have a
+            consistent amount of mouse pixels moved that is closer to the
+            absolute minimum that is necessary.
+          </p>
+        </div>
+      </div>
+    </div>
+    <hr />
+    <div id="portfolio-readiness">
+      <div>
+        <h2>Portfolio Readiness: Conclusion and Reflections</h2>
+        <p>
+          Over the course of this project, I was able to combine design and
+          statistics in a scenario mimicing the real world A/B testing process.
+          I had the chance to develop my skills as a designer in terms of
+          considering changes that impact metrics and thinking critically about
+          them. Additionaly, I had the chance to develop my statistical analysis
+          skills in terms of practicing identifying the correct test to complete
+          and actually conducting it; this statistical knowledge is both
+          relevant to my work in design as well as my overall general knowledge.
+          I feel as though I have had the chance to learn a lot from this
+          project, and I look forward to continuing to develop my design skills
+          as well as related ones like statistical analysis in future projects.
+        </p>
+      </div>
+    </div>
+  </body>
+</html>
